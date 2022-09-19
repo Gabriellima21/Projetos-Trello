@@ -1,25 +1,41 @@
-package media;
+package Media1;
 
 import java.util.Scanner;
+
 public class Media {
 
 	public static void main(String[] args) {
-		float n1,n2,n3;
+		
+		int n1;
+		
+		float n2;
+				
+		float soma = 0;
 		
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Informe sua primeira nota: ");
-		n1 = input.nextFloat();
+		System.out.println("Quantas notas você deseja inserir: ");
 		
-		System.out.println("Informe sua segunda nota: ");
-		n2 = input.nextFloat();
+		n1 = input.nextInt();
 		
-		System.out.println("Informe sua terceira nota: ");
-		n3 = input.nextFloat();
+		for (int i = 0; i<n1;i++) {
+			
+			System.out.println("Informe suas notas: ");
+			
+			n2 = input.nextFloat();
 		
-		float media = (n1+n2+n3)/3;
-		
-		System.out.println("A sua média foi de: " +media);
+				  soma+=n2;		
+				  
+				  //soma = soma + n2;
 		}
-	
+		
+		float totalSoma = soma;
+		
+		float media = totalSoma/n1;
+		
+		System.out.printf("A sua média é de %.2f" + media);
+
 	}
+}
+		
+		
