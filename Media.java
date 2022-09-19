@@ -1,18 +1,25 @@
-package calcularMedia;
+package media;
 
+import java.util.Scanner;
 public class Media {
 
 	public static void main(String[] args) {
+		float n1,n2,n3;
 		
-		float notas[] = {8,9};
+		Scanner input = new Scanner(System.in);
 		
-		float soma = 0;
-		for (int i = 0; i<notas.length; i++) {
-			soma = soma + notas [i];
+		System.out.println("Informe sua primeira nota: ");
+		n1 = input.nextFloat();
+		
+		System.out.println("Informe sua segunda nota: ");
+		n2 = input.nextFloat();
+		
+		System.out.println("Informe sua terceira nota: ");
+		n3 = input.nextFloat();
+		
+		float media = (n1+n2+n3)/3;
+		
+		System.out.println("A sua média foi de: " +media);
 		}
-		float mediaFinal = soma / notas.length;
 	
-		System.out.println("A média é de: "+ mediaFinal);
 	}
-
-}
