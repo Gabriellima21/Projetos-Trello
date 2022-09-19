@@ -1,42 +1,29 @@
-package caloriasFrutas;
-import java.util.Scanner; 
-import java.util.List;
-import java.util.ArrayList;
-
+import java.util.HashMap;
+import java.util.Scanner;
 public class CaloriasFrutas {
 
 	public static void main(String[] args) {
 		
-		List <String> frutas = new ArrayList <> ();
-		
-		frutas.add("banana");
-		frutas.add("maçã");
-		frutas.add("uva");
-		frutas.add("pera");
-		
-		Scanner input = new Scanner (System.in);
-		
-		System.out.println("Insira a fruta que queira saber as calorias: ");
-		
-		String f = input.next();
-		
-		f.toLowerCase();
-		
-		if (f.equals(frutas.get(0))) { //equals
-			System.out.println("A banana possui 100 calorias");
-		}
-		else if (f.equals(frutas.get(1))) {
-			System.out.println("A maçã possui 50 calorias");
-		}
-		else if (f.equals(frutas.get(2))) {
-			System.out.println("A uva possui 80 calorias");
-		}
-	    else if (f.equals(frutas.get(3))) {
-			System.out.println("A pera possui 75 calorias");
-	    } else {
-			System.out.println("Insira uma das frutas informadas.");
-		}
-		
-	} // fazer sem os if //hashmap
+	HashMap <String,String> frutas = new HashMap <String,String>(); //valor e chave
+	
+	//inserir elementos .put
+		frutas.put("banana","A banana possui 100 calorias");
+		frutas.put("maçã","A maçã possui 50 calorias");
+		frutas.put("uva","A uva possui 80 calorias");
+		frutas.put("pera","A pera possui 75 calorias");
+		frutas.put( "erro","Insira uma das frutas informadas.");
+	
+	Scanner input = new Scanner (System.in);
+	
+	System.out.println("Digite a fruta que queira saber as calorias: \n Banana \n Maçã \n Uva \n Pera");
+	
+	String opcao = input.next();
+	opcao = opcao.toLowerCase();
+	
+	System.out.println(frutas.getOrDefault(opcao,"Insira uma das frutas informadas."));
+	
+	
+	
+	 }
 
 }
