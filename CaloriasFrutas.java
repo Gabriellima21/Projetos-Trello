@@ -1,24 +1,42 @@
-import java.util.Scanner;
+package caloriasFrutas;
+import java.util.Scanner; 
+import java.util.List;
+import java.util.ArrayList;
+
 public class CaloriasFrutas {
-	
+
 	public static void main(String[] args) {
-		//String[] frutas = {"banana", "maca", "uva", "pera"};
 		
-		String f;
+		List <String> frutas = new ArrayList <> ();
+		
+		frutas.add("banana");
+		frutas.add("maçã");
+		frutas.add("uva");
+		frutas.add("pera");
 		
 		Scanner input = new Scanner (System.in);
 		
-		System.out.println("Digite uma das Frutas: ");
+		System.out.println("Insira a fruta que queira saber as calorias: ");
 		
-		f = input.nextLine();
-		f = f.toLowerCase();
+		String f = input.next();
 		
-		switch (f) { //dado a variavel f
-		case "banana": System.out.println("A banana possui 100 calorias"); break; //caso o f seja banana 
-		case "maçã": System.out.println("A maçã possui 50 calorias"); break;
-		case "uva": System.out.println("A uva possui 80 calorias");break;
-		case "pera": System.out.println("A pera possui 75 calorias");break;
-		default: System.out.println("Fruta invalida, insira: banana, maçã, uva ou pera"); // caso nenhuma as condicionais a cima não sejam aceitas.
+		f.toLowerCase();
+		
+		if (f.equals(frutas.get(0))) { //equals
+			System.out.println("A banana possui 100 calorias");
 		}
-	}
+		else if (f.equals(frutas.get(1))) {
+			System.out.println("A maçã possui 50 calorias");
+		}
+		else if (f.equals(frutas.get(2))) {
+			System.out.println("A uva possui 80 calorias");
+		}
+	    else if (f.equals(frutas.get(3))) {
+			System.out.println("A pera possui 75 calorias");
+	    } else {
+			System.out.println("Insira uma das frutas informadas.");
+		}
+		
+	} // fazer sem os if //hashmap
+
 }
