@@ -2,14 +2,19 @@
 public class NumeroImpar {
 
 	public static void main(String[] args) {
-		int i = 1;
+		int[] impar = new int [100];
 		
-		do {
-			if (i % 2 !=0) {
-				System.out.println(i);
-				i++;
-			}
-		  } while (i<=100);
-
+		int soma = 0;
+		
+		for (int i =0; i<100; i++) {
+			impar[i] = soma + 1;
+			soma+=1;
+		}
+		for (int impares : impar) {
+			if (impares % 2 !=0) {
+		
+			System.out.println(impares);
+		}
+		}
 	}
 }
