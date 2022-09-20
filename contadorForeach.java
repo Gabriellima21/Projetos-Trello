@@ -1,21 +1,18 @@
+package contador;
 
 public class contadorForeach {
 
 	public static void main(String[] args) {
-	
-		int valores[] = new int[100];
+		int valores[] = new int [100];
 		
-		for (int i =0; i<valores.length; i++) {
+		int soma = 0; 
 		
-			valores[i] = i + 1; //numeros na posição i recebe +1
+		for (int i = 99; i>=0; i--) {
+			valores[i] = soma + 1;
+			soma+=1;
 		}
-		
-		for (int valor : valores) { //valor esta recebendo as 100 posições do array valores.
-			
-			System.out.println(valor);
-
+		for (int valor : valores) {
+		System.out.println(valor);
 		}
-		
-	} 
-
-} 
+	}
+}
