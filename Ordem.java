@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.Arrays;
 public class Ordem {
 
 	public static void main(String[] args) {
@@ -12,22 +12,63 @@ public class Ordem {
 		System.out.println("Informe um numero:");
 		int numero = input.nextInt();
 		array[i] = numero;
-		} //1,1,2,5,6
-		  //1,2,5,6
+		} //1,1,1,4,5    1,1,2,4,5
+		  //1,1,4,5
+	
 		
-		for (int i =0; i <array.length;i++) { //for para percorer o array.
-			for (int j= i+1; j<array.length; j++) { //percorrer uma posição a mais no array.
-				if (array[i]==array[j]) { //compara e encontar elementos repetidos..
-					for (int k=i; k<array.length-1;k++) { //a variavel k irá percorrer o array, caso ache o número igual, ele o armazenará
-						array[k] = array [k+1]; //guarda o valor, k pega o número q esta na proxima posição se for igual e guarda nele  "Substituindo" vai armazenar o número q estiver repitido.
+		for (int i =0; i <tamanhoExibicao-1;i++) { //for para percorer o array.
+			for (int j= i+1; j<tamanhoExibicao; j++) { //percorrer uma posição a mais no array.
+				int removidos=0;
+					if (array[i]==array[j]) { //compara e encontar elementos repetidos.. // else if
+					for (int k=i;k<array.length-1;k++) {
+						array[k] = array[k+1];
+						} removidos++;
+						  j --;
+						} tamanhoExibicao = tamanhoExibicao - removidos;
+		              //ir decrementando as posições caso haja números repeditos. 
 					}
-					tamanhoExibicao --; //ir decrementando as posições caso haja números repeditos. 
+		}
+				
+		for (int i=0; i<tamanhoExibicao -1; i++) { //for que percorre ate a penultima posição do array
+			for(int j=i +1; j<tamanhoExibicao;j++) { //for que compara a posição atual com a seguinte.
+				if (array[i]>array[j]) {
+					int troca = array [i]; //guardei o valor da posição a na variavel troca
+					array[i] = array [j];
+					array[j] = troca;
 				}
 			}
 		}
-					
-		for (int i=0;i<=tamanhoExibicao;i++) {
+		for (int i=0;i<tamanhoExibicao;i++) {
 			System.out.println(array[i]);
 		}
 	}
 }
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*for (int i=0; i<n -1; i++) { //for que percorre ate a penultima posição do array
+			for(int j=i +1; j<n;j++) { //for que compara a posição atual com a seguinte.
+				int k = i + 1;
+				int removidos = 0;
+				if (array[i] == array[j]) {
+					removidos++;
+	            }else {
+	            	array[k++] = array[j];
+	            } n = n - removidos;
+			} 
+		}*/
+		/*for (int i=0;i<=n;i++) {
+			System.out.println(Arrays.sort[i]);*/
+
+
